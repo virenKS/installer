@@ -11,10 +11,10 @@
 #setenv fw_max_size 0xC000
 
 #if test -e ${devtype} ${devnum} ${prefix}${ARISC_blob_name}; then
-#	echo "Found the ARISC firmware blob `${prefix}${ARISC_blob_name}`"
-#	base 0x0
-#	echo "  asserting the ARISC core reset.."
-#	mw.l ${R_CPUCFG_addr} 0x0 0x1
+	echo "Found the ARISC firmware blob `${prefix}${ARISC_blob_name}`"
+	base 0x0
+	echo "  asserting the ARISC core reset.."
+	mw.l ${R_CPUCFG_addr} 0x0 0x1
 #	echo "  asserting reset done, trying to upload the blob to the SRAM A2 (${SRAM_A2_addr}).."
 #	load ${devtype} ${devnum} ${tmp_addr} ${prefix}${ARISC_blob_name}
 #	cp.b ${tmp_addr} ${SRAM_A2_addr} ${fw_max_size}
